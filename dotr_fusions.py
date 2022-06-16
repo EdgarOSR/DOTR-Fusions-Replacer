@@ -6,9 +6,9 @@ import subprocess
 class DotrFusions:          
     def __init__(self):
         pyautogui.PAUSE = 0.1        
-        self.exe_path = r'E:\yugioh-the-duelists-of-the-roses_modding_tool\DOTR Modding Tool.exe'
+        self.exe_path = r'DOTR Modding Tool.exe'
         self.max_fusion = 26540
-        self.fusion_done = 3804
+        self.fusion_done = 3821
         self.max_alters = int(self.max_fusion - self.fusion_done)
         self.counter = 1
         self.checkpoint = 100
@@ -39,6 +39,9 @@ class DotrFusions:
         # pyautogui.hotkey('win','d')
         subprocess.Popen(f'explorer {self.exe_path}')
         time.sleep(1)
+        pyperclip.copy('E:\CURSOS PROGRAMACAO\PYTHON\yugioh_dotr\dotr.iso')
+        pyautogui.hotkey('ctrl','v')
+        time.sleep(5)
         pyautogui.hotkey('enter')
         with pyautogui.hold('ctrl'):
             pyautogui.press(keys='pgdn', presses=4)
@@ -77,5 +80,3 @@ class DotrFusions:
 # executes the code
 app = DotrFusions()
 app.Main()
-
-
